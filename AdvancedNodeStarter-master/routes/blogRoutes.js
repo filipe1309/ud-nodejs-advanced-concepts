@@ -38,7 +38,7 @@ module.exports = app => {
 
     // client.set(req.user.id, JSON.stringify(blogs));
 
-    const blogs = await Blog.find({ _user: req.user.id });
+    const blogs = await Blog.find({ _user: req.user.id }).cache();
     res.send(blogs);
   });
 
