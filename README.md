@@ -9,6 +9,15 @@
 
 This project was developed following Udemy's "[NodeJS: Advanced Concepts](https://www.udemy.com/course/advanced-node-for-developers)" class.
 
+## :books: Content
+
+- Create a NodeJS cluster
+- Create a NodeJS cluster with PM2
+- Create Workers Threads
+- Add caching with Redis
+- Monkey Patching moongose exec function to cache queries
+- Middleware to clear cache
+
 ## :computer: Technologies
 
 - [Node.js](https://nodejs.org/en/)
