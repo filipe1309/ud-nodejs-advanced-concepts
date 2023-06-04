@@ -92,3 +92,19 @@ ab -c 2 -n 2 localhost:3000/
 # Time per request:       994.180 [ms] (mean)
 # Time per request:       497.090 [ms] (mean, across all concurrent requests)
 ```
+
+## Section 3 - Project Setup
+
+https://github.com/StephenGrider/AdvancedNodeComplete
+https://github.com/StephenGrider/AdvancedNodeStarter // New Version
+
+```sh
+# git clone https://github.com/StephenGrider/AdvancedNodeStarter.git
+cd AdvancedNodeStarter
+npm i
+cd client
+npm i --legacy-peer-deps
+cd ..
+npm run dev
+#localhost:3000
+```
