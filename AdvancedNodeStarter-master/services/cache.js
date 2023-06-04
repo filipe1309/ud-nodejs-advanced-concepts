@@ -4,12 +4,13 @@ const util = require('util');
 
 const redisUrl = 'redis://127.0.0.1:6379';
 const client = redis.createClient(redisUrl);
-client.get = util.promisify(client.get); // this is a way to transform a callback function into a promise based function
+client.hget = util.promisify(client.hget); // this is a way to transform a callback function into a promise based function
 const exec = moongoose.Query.prototype.exec;
 
 
-moongoose.Query.prototype.cache = function () {
+moongoose.Query.prototype.cache = function (options = {}) {
     this.useCache = true;
+    this.hashKey = JSON.stringify(options.key || '');
     return this;
 }
 
@@ -35,7 +36,7 @@ moongoose.Query.prototype.exec = async function () {
     console.log('key', key);
 
     // See if we have a value for 'key' in redis
-    const cacheValue = await client.get(key);
+    const cacheValue = await client.hget(this.hashKey, key);
 
     // If we do, return that
     if (cacheValue) {
@@ -53,6 +54,6 @@ moongoose.Query.prototype.exec = async function () {
 
     const result = await exec.apply(this, arguments);
     console.log('result', result);
-    client.set(key, JSON.stringify(result), 'EX', 10);
+    client.hset(this.hashKey, key, JSON.stringify(result), 'EX', 10);
     return result;
 }
