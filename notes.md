@@ -2,7 +2,7 @@
 
 > notes taken during the course
 
-## Section 2
+## Section 2 - Enhancing Node Performance
 
 ```sh
 cd section2
@@ -80,6 +80,9 @@ pm2 delete index
 ```sh
 ## Worker Threads
 
+# Verify Worker Threads are enabled
+node -e "require('worker_threads'); console.log('success');"
+
 ab -c 1 -n 1 localhost:3000/
 # Time taken for tests:   0.505 seconds
 # Requests per second:    1.98 [#/sec] (mean)
@@ -99,6 +102,7 @@ https://github.com/StephenGrider/AdvancedNodeComplete
 https://github.com/StephenGrider/AdvancedNodeStarter // New Version
 
 ```sh
+# AdvancedNodeComplete - Blog App with React/Redux and Node.js
 # git clone https://github.com/StephenGrider/AdvancedNodeStarter.git
 cd AdvancedNodeStarter
 npm i
@@ -108,3 +112,93 @@ cd ..
 npm run dev
 #localhost:3000
 ```
+
+## Section 4 - Data Caching with Redis
+
+```sh
+# Redis
+brew install redis
+brew services start redis
+redis-cli ping # PONG
+redis-cli
+set mynumber 10
+get mynumber
+incr mynumber
+get mynumber
+del mynumber
+brew services stop redis
+```
+
+```sh
+# Redis Client for Node
+node
+# Welcome to Node.js v19.7.0.
+# Type ".help" for more information.
+> const redis = require('redis');
+> const redisUrl = 'redis://127.0.0.1:6379'
+> const client = redis.createClient(redisUrl)
+
+> client.set('hi', 'there')
+> client.get('hi', (err, value) => console.log(value))
+> client.get('hi', console.log)
+```
+
+```sh
+# Redis Hashes
+node
+> const redis = require('redis');
+> const redisUrl = 'redis://127.0.0.1:6379'
+> const client = redis.createClient(redisUrl)
+
+> client.hset('german', 'red', 'rot')
+> client.hget('german', 'red', console.log)
+> null rot # error, value
+> client.hset('german', 'blue', 'blau')
+> client.hget('german', 'blue', console.log)
+> null blau # error, value
+> client.hgetall('german', console.log)
+> null { red: 'rot', blue: 'blau' } # error, value
+```
+
+```sh
+# One Redis Gotcha
+# Store objects in Redis
+node
+> const redis = require('redis');
+> const redisUrl = 'redis://127.0.0.1:6379'
+> const client = redis.createClient(redisUrl)
+
+> client.set('colors', { color: 'rot' })
+> client.get('colors', console.log)
+> null '[object Object]' # error, value
+
+# JSON.parse and JSON.stringify
+node
+> const redis = require('redis');
+> const redisUrl = 'redis://127.0.0.1:6379'
+> const client = redis.createClient(redisUrl)
+
+> client.set('colors', JSON.stringify({ color: 'rot' }))
+> client.get('colors', console.log)
+> null '{"color":"rot"}' # error, value
+> client.get('colors', (err, value) => console.log(JSON.parse(value)))
+> null { color: 'rot' } # error, value
+```
+
+```sh
+# Redis flushall
+client.flushall()
+```
+
+```sh
+# Redis timeout
+client.set('color', 'red', 'EX', 5) # 5 seconds
+client.get('color', console.log)
+```
+
+
+
+
+
+
+
