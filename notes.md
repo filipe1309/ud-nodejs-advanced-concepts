@@ -196,6 +196,14 @@ client.set('color', 'red', 'EX', 5) # 5 seconds
 client.get('color', console.log)
 ```
 
+## Section 5 - Automated Headless Browser Testing
+
+```sh
+node
+> const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19';
+> Buffer.from(session, 'base64').toString('utf8')
+'{"passport":{"user":"647bed57d921dabd5b19c77f"}}'
+```
 
 
 

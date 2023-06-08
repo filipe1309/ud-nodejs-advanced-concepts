@@ -21,10 +21,21 @@ This project was developed following Udemy's "[NodeJS: Advanced Concepts](https:
 ## :computer: Technologies
 
 - [Node.js](https://nodejs.org/en/)
+- [PM2](https://pm2.keymetrics.io/)
+- [Puppeteer](https://pptr.dev/)
+- [Redis](https://redis.io/)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/)
+- [Express](https://expressjs.com/)
+- [Passport](http://www.passportjs.org/)
+- [Jest](https://jestjs.io/)
+- [Body Parser](https://www.npmjs.com/package/body-parser)
 
 ## :scroll: Requirements
 
 - [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
+- [PM2](https://pm2.keymetrics.io/)
 
 ## :cd: Installation
 
