@@ -199,13 +199,32 @@ client.get('color', console.log)
 ## Section 5 - Automated Headless Browser Testing
 
 ```sh
+# Cookie-based Authentication
 node
-> const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19';
+> const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19'; # from browser set-cookie(session)
 > Buffer.from(session, 'base64').toString('utf8')
 '{"passport":{"user":"647bed57d921dabd5b19c77f"}}'
 ```
 
+```sh
+# Session Signatures
+node
+> const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19'; # from browser set-cookie(session)
+> const Keygrip = require('keygrip')
+> const keygrip = new Keygrip(['123123123'])
+> keygrip.sign('session=' + session);
+'TblcK5cSSGoLJrsFrtAHB9v_LVM'
+> keygrip.sign('qwert' + session);
+'M1putl0y9i9gq-MlCgEfLwFteOI'
+> keygrip.verify('session=' + session, 'TblcK5cSSGoLJrsFrtAHB9v_LVM');
+true
+> keygrip.verify('session=' + session, 'TblcK5cSSGoLJrsFr');
+false
+```
 
+```js
+test.only(...)
+```
 
 
 
