@@ -1,5 +1,3 @@
-const sessionFactory = require('./factories/sessionFactory');
-const userFactory = require('./factories/userFactory');
 const Page = require('./helpers/page');
 
 let page;
@@ -28,16 +26,7 @@ test('clicking login starts oauth flow', async () => {
 
 test('when signed in, shows logout button', async () => {
     // Given
-    const user = await userFactory()
-    const { session, sig } = sessionFactory(user);
-
-    // Set Cookies & Refresh the page
-    await page.setCookie({ name: 'session', value: session });
-    await page.setCookie({ name: 'session.sig', value: sig });
-    await page.goto('http://localhost:3000');
-
-    // Wait page load
-    await page.waitFor('a[href="/auth/logout"]');
+    await page.login();
 
     // When
     const logoutText = await page
