@@ -2,6 +2,8 @@
 
 > notes taken during the course
 
+https://github.com/StephenGrider/AdvancedNodeStarter
+
 ## Section 2 - Enhancing Node Performance
 
 ```sh
