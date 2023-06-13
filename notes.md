@@ -201,6 +201,10 @@ client.get('color', console.log)
 ## Section 5 - Automated Headless Browser Testing
 
 ```sh
+npm run test
+```
+
+```sh
 # Cookie-based Authentication
 node
 > const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19'; # from browser set-cookie(session)

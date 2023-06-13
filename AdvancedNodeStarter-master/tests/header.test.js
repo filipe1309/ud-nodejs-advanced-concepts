@@ -12,15 +12,20 @@ afterEach(async () => {
 })
 
 test('the header has the correct text', async () => {
-    const text = await page.$eval('a.brand-logo', el => el.innerHTML);
+    // When
+    const text = await page.getContentsOf('a.brand-logo');
+
+    // Then
     expect(text).toEqual('Blogster');
 })
 
 
 test('clicking login starts oauth flow', async () => {
+    // When
     await page.click('.right a');
     const url = await page.url();
 
+    // Then
     expect(url).toMatch(/accounts\.google\.com/);
 })
 
@@ -29,8 +34,7 @@ test('when signed in, shows logout button', async () => {
     await page.login();
 
     // When
-    const logoutText = await page
-        .$eval('a[href="/auth/logout"]', el => el.innerHTML);
+    const logoutText = await page.getContentsOf('a[href="/auth/logout"]');
 
     // Then
     expect(logoutText).toEqual('Logout')
