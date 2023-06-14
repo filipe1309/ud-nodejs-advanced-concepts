@@ -1,3 +1,5 @@
+jest.setTimeout(60000); // default 5000ms
+
 require('../models/User');
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
@@ -9,5 +11,3 @@ mongoose.connect(keys.mongoURI, {
 });
 
 afterAll(async () => { await mongoose.disconnect() });
-
-jest.setTimeout(50000); // default 5000ms
