@@ -15,7 +15,7 @@
     "heroku-postbuild": "npm run build",
     "start:redis": "brew services start redis",
     "stop:redis": "brew services stop redis",
-    "test": "jest"
+    "test": "jest --testEnvironment=node --verbose"
   },
   "author": "",
   "license": "ISC",
