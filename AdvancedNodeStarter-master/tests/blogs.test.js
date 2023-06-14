@@ -28,10 +28,12 @@ describe('When logged in, and in form screen', async () => {
             await page.type('.content input', 'My Content');
             await page.click('form button');
         });
+
         test('takes user to review screen', async () => {
             const text = await page.getContentsOf('h5');
             expect(text).toEqual('Please confirm your entries');
         });
+
         test('adds blog to index page afet submitting in review screen', async () => {
             await page.click('button.green');
             await page.waitFor('.card');
@@ -53,5 +55,22 @@ describe('When logged in, and in form screen', async () => {
             expect(titleError).toEqual('You must provide a value');
             expect(contentError).toEqual('You must provide a value');
         });
+    });
+});
+
+describe('When not logged in', async () => {
+    test('user cannot create blog post', async () => {
+        const result = await page.evaluate(() => {
+            return fetch('/api/blogs', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ title: 'My Title', content: 'My Content' }),
+            }).then(res => res.json());
+        });
+
+        expect(result).toEqual({ error: 'You must log in!' });
     });
 });
