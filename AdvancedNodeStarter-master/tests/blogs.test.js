@@ -32,6 +32,14 @@ describe('When logged in, and in form screen', async () => {
             const text = await page.getContentsOf('h5');
             expect(text).toEqual('Please confirm your entries');
         });
+        test('adds blog to index page afet submitting in review screen', async () => {
+            await page.click('button.green');
+            await page.waitFor('.card');
+            const title = await page.getContentsOf('.card-title');
+            const content = await page.getContentsOf('p');
+            expect(title).toEqual('My Title');
+            expect(content).toEqual('My Content');
+        });
     });
 
     describe('And using invalid inputs', async () => {
