@@ -11,7 +11,7 @@ afterEach(async () => {
     await page.close()
 });
 
-describe('When logged in', async () => {
+describe('When logged in, and in form screen', async () => {
     beforeEach(async () => {
         await page.login();
         await page.click('a[href="/blogs/new"]');
@@ -20,6 +20,18 @@ describe('When logged in', async () => {
     test('can see blog create form', async () => {
         const label = await page.getContentsOf('form label');
         expect(label).toEqual('Blog Title');
+    });
+
+    describe('and using valid inputs and submitting', async () => {
+        beforeEach(async () => {
+            await page.type('.title input', 'My Title');
+            await page.type('.content input', 'My Content');
+            await page.click('form button');
+        });
+        test('takes user to review screen', async () => {
+            const text = await page.getContentsOf('h5');
+            expect(text).toEqual('Please confirm your entries');
+        });
     });
 
     describe('And using invalid inputs', async () => {

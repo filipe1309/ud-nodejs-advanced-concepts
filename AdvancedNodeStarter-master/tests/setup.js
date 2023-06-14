@@ -10,4 +10,4 @@ mongoose.connect(keys.mongoURI, {
 
 afterAll(async () => { await mongoose.disconnect() });
 
-jest.setTimeout(30000); // default 5000ms
+jest.setTimeout(50000); // default 5000ms
