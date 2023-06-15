@@ -201,6 +201,8 @@ client.get('color', console.log)
 ## Section 5 - Automated Headless Browser Testing
 
 ```sh
+brew install chromium --no-quarantine
+
 npm run test
 ```
 

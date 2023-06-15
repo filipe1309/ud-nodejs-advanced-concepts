@@ -1,3 +1,4 @@
+const os = require('os');
 const puppeteer = require('puppeteer');
 const sessionFactory = require('../factories/sessionFactory');
 const userFactory = require('../factories/userFactory');
@@ -8,9 +9,16 @@ class CustomPage {
     }
 
     static async build () {
-        const browser = await puppeteer.launch({
+        const browserConfig = {
             headless: false,
-        });
+        }
+
+        // For M1 Mac
+        if (os.arch() === 'arm64') {
+            browserConfig.executablePath = '/Applications/Chromium.app/Contents/MacOS/Chromium';
+        }
+
+        const browser = await puppeteer.launch(browserConfig);
 
         const page = await browser.newPage();
         const customPage = new CustomPage(page);
