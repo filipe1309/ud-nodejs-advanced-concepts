@@ -234,6 +234,11 @@ false
 test.only(...)
 ```
 
+https://www.reddit.com/r/MacOS/comments/q9d772/homebrew_chromium_is_damaged_and_cant_be_openend/
+https://github.com/puppeteer/puppeteer/issues/5662
 
 
+## Section 6 - Wiring Up Continuous Integration
+
+```sh
 
