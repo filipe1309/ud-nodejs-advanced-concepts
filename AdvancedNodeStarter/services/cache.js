@@ -1,9 +1,9 @@
 const moongoose = require('mongoose');
 const redis = require('redis');
 const util = require('util');
+const keys = require('../config/keys');
 
-const redisUrl = 'redis://127.0.0.1:6379';
-const client = redis.createClient(redisUrl);
+const client = redis.createClient(keys.redisUrl);
 client.hget = util.promisify(client.hget); // this is a way to transform a callback function into a promise based function
 const exec = moongoose.Query.prototype.exec;
 

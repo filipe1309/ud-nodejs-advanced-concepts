@@ -10,7 +10,8 @@ class CustomPage {
 
     static async build () {
         const browserConfig = {
-            headless: false,
+            headless: true,
+            args: ['--no-sandbox']
         }
 
         // For M1 Mac
