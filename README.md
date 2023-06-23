@@ -1,9 +1,13 @@
 
 # <p align="center">NodeJS: Advanced Concepts</p>
 
-<p align="center">
-    <img src="https://img.shields.io/badge/nodejs-15.0-green" alt="NodeJS"/>
-</p>
+
+
+![example event parameter](https://github.com/filipe1309/ud-nodejs-advanced-concepts/actions/workflows/deploy.yaml/badge.svg?event=push)
+<img src="https://img.shields.io/badge/Code-NodeJS-informational?style=flat-square&logo=node.js&color=339933" alt="NodeJS" />
+<img src="https://img.shields.io/badge/Code-React-informational?style=flat-square&logo=react&color=61DAFB" alt="React" />
+
+---
 
 ## 💬 About
 
@@ -17,6 +21,7 @@ This project was developed following Udemy's "[NodeJS: Advanced Concepts](https:
 - Add caching with Redis
 - Monkey Patching moongose exec function to cache queries
 - Middleware to clear cache
+- Add Continuous Integration with Github Actions
 
 ## :computer: Technologies
 
