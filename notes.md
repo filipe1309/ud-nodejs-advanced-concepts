@@ -266,3 +266,34 @@ npm i aws-sdk
 npm i uuid
 ```
 
+Exemple
+```json
+// http://localhost:3001/api/upload
+
+{
+  "key": "647bed57d921dabd5b19c77f/40aaffb0-12d0-11ee-9775-09e367669407.jpeg",
+  "url": "https://my-blog-bucket-13.s3.amazonaws.com/647bed57d921dabd5b19c77f/40aaffb0-12d0-11ee-9775-09e367669407.jpeg?AWSAccessKeyId=MY_ACCESS_KEY&Content-Type=image%2Fjpeg&Expires=1687640514&Signature=..."
+}
+```
+
+### CORS Configuration for AWS S3
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors-configuration.html
+
+```json
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "http://localhost:3000"
+        ],
+        "ExposeHeaders": [],
+        "MaxAgeSeconds": 3000
+    }
+]
+```
