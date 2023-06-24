@@ -261,3 +261,8 @@ https://aws.amazon.com/sdk-for-node-js/
 ```sh
 npm i aws-sdk
 ```
+
+```sh
+npm i uuid
+```
+
