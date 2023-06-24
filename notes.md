@@ -16,9 +16,9 @@ node index.js
 
 ```
 
-```sh
-# performace test
+### Performance test
 
+```sh
 ## apache bench
 ab -c 50 -n 500 localhost:3000/fast # 50 concurrent requests, 500 total requests
 
@@ -69,8 +69,9 @@ npm i autocannon -g
 autocannon -c 50 -d 5 -p 10 localhost:3000/fast # 50 concurrent requests, 5 seconds, 10 pipelining
 ```
 
+### PM2
+
 ```sh
-# pm2
 npm i pm2 -g
 pm2 start index.js -i 0 # 0 = max number of cores
 pm2 list
@@ -79,9 +80,9 @@ pm2 show index
 pm2 delete index
 ```
 
-```sh
-## Worker Threads
+### Worker Threads
 
+```sh
 # Verify Worker Threads are enabled
 node -e "require('worker_threads'); console.log('success');"
 
@@ -117,8 +118,9 @@ npm run dev
 
 ## Section 4 - Data Caching with Redis
 
+### Redis
+
 ```sh
-# Redis
 brew install redis
 brew services start redis
 redis-cli ping # PONG
@@ -200,22 +202,26 @@ client.get('color', console.log)
 
 ## Section 5 - Automated Headless Browser Testing
 
+### Chromium
+
 ```sh
 brew install chromium --no-quarantine
 
 npm run test
 ```
 
+### Cookie-based Authentication
+
 ```sh
-# Cookie-based Authentication
 node
 > const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19'; # from browser set-cookie(session)
 > Buffer.from(session, 'base64').toString('utf8')
 '{"passport":{"user":"647bed57d921dabd5b19c77f"}}'
 ```
 
+### Session Signatures
+
 ```sh
-# Session Signatures
 node
 > const session = 'eyJwYXNzcG9ydCI6eyJ1c2VyIjoiNjQ3YmVkNTdkOTIxZGFiZDViMTljNzdmIn19'; # from browser set-cookie(session)
 > const Keygrip = require('keygrip')
@@ -240,5 +246,7 @@ https://github.com/puppeteer/puppeteer/issues/5662
 
 ## Section 6 - Wiring Up Continuous Integration
 
-```sh
+https://www.travis-ci.com/
+
+https://github.com/features/actions
 
