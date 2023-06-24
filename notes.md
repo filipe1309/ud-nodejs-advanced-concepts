@@ -250,3 +250,14 @@ https://www.travis-ci.com/
 
 https://github.com/features/actions
 
+## Section 7 - Scalable Image/File Upload
+
+### AWS S3
+
+https://aws.amazon.com/s3/
+
+https://aws.amazon.com/sdk-for-node-js/
+
+```sh
+npm i aws-sdk
+```
