@@ -297,3 +297,31 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors-configuration.html
     }
 ]
 ```
+
+### Bucket Policy for AWS S3
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-iam-policies.html
+
+AWS Policy Generator
+
+Type of Policy: S3 Bucket Policy
+Effect: Allow
+Principal: *
+Actions: GetObject
+ARN: arn:aws:s3:::my-blog-bucket-13/*
+
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1687643022266",
+    "Statement": [
+        {
+            "Sid": "Stmt1687642706925",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::my-blog-bucket-13/*"
+        }
+    ]
+}
+```
