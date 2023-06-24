@@ -325,3 +325,28 @@ ARN: arn:aws:s3:::my-blog-bucket-13/*
     ]
 }
 ```
+
+Bonus!
+Interested in some of my other courses? Try one out now!
+
+React Testing Library and Jest: The Complete Guide - https://www.udemy.com/course/react-testing-library-and-jest/?couponCode=526E07745B1FC-BONUS
+
+Redis: The Complete Developer's Guide - https://www.udemy.com/course/redis-the-complete-developers-guide-p/?couponCode=9D04C069F9-BONUS
+
+NestJS: The Complete Developer's Guide - https://www.udemy.com/course/nestjs-the-complete-developers-guide/?couponCode=D406B3C5F99-BONUS
+
+Microservices with Node JS and React - https://www.udemy.com/course/microservices-with-node-js-and-react/?couponCode=4641584311-BONUS
+
+Docker and Kubernetes: The Complete Guide - https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/?couponCode=31AB06A8F178-BONUS
+
+Go: The Complete Developer's Guide (Golang) - https://www.udemy.com/course/go-the-complete-developers-guide/?couponCode=C5FBE7A9F450-BONUS
+
+Modern React with Redux [2023 Update] - https://www.udemy.com/course/react-redux/?couponCode=435CDC158F05-BONUS
+
+Typescript: The Complete Developer's Guide - https://www.udemy.com/course/typescript-the-complete-developers-guide/?couponCode=6565485C3A7-BONUS
+
+React and TypeScript: Build a Portfolio Project - https://www.udemy.com/course/react-and-typescript-build-a-portfolio-project/?couponCode=15E4C794E4F9-BONUS
+
+Microfrontends with React: A Complete Developer’s Guide - https://www.udemy.com/course/microfrontend-course/?couponCode=6831DF9D94A-BONUS
+
+SQL and PostgreSQL: The Complete Developer's Guide - https://www.udemy.com/course/sql-and-postgresql/?couponCode=B46F63116D-BONUS

@@ -19,6 +19,7 @@ This project was developed following Udemy's "[NodeJS: Advanced Concepts](https:
 - Monkey Patching moongose exec function to cache queries
 - Middleware to clear cache
 - Add Continuous Integration with Github Actions
+- Pre-signing files with AWS S3
 
 ## :computer: Technologies
 
