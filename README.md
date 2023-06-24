@@ -1,9 +1,6 @@
-
 # <p align="center">NodeJS: Advanced Concepts</p>
 
-
-
-![example event parameter](https://github.com/filipe1309/ud-nodejs-advanced-concepts/actions/workflows/deploy.yaml/badge.svg?event=push)
+![github action deploy badge](https://github.com/filipe1309/ud-nodejs-advanced-concepts/actions/workflows/deploy.yaml/badge.svg?event=push)
 <img src="https://img.shields.io/badge/Code-NodeJS-informational?style=flat-square&logo=node.js&color=339933" alt="NodeJS" />
 <img src="https://img.shields.io/badge/Code-React-informational?style=flat-square&logo=react&color=61DAFB" alt="React" />
 
@@ -55,7 +52,8 @@ cd ud-nodejs-advanced-concepts
 ## :runner: Running
 
 ```sh
-node ...
+cd AdvancedNodeStarter
+npm run dev
 ```
 
 <!-- ## :white_check_mark: Tests
@@ -92,5 +90,4 @@ Please make sure to update tests as appropriate. -->
 
 ---
 
-> @ Generated with [ShubcoGen Template™](https://github.com/filipe1309/shubcogen-template) {{ VERSION }}  
-> ❓ [Docs](./.shub/README.md)
+> @ Generated with [ShubcoGen Template™](https://github.com/filipe1309/shubcogen-template)
