@@ -34,9 +34,9 @@ describe('When logged in, and in form screen', async () => {
             expect(text).toEqual('Please confirm your entries');
         });
 
-        test('adds blog to index page afet submitting in review screen', async () => {
+        test('adds blog to index page afer submitting in review screen', async () => {
             await page.click('button.green');
-            await page.waitFor('.card');
+            await page.waitFor('.card', {timeout:0});
             const title = await page.getContentsOf('.card-title');
             const content = await page.getContentsOf('p');
             expect(title).toEqual('My Title');
